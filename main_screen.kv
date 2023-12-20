@@ -1,0 +1,28 @@
+<MainScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+
+        # Main Screen Title
+        Label:
+            text: 'Welcome to the Main Screen'
+            font_size: 24
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        # Additional Widgets can be added here
+        # For example, a message label
+        Label:
+            text: 'Your application content goes here!'
+            font_size: 18
+
+        # Logout Button
+        Button:
+            text: 'Logout'
+            size_hint_y: None
+            height: 40
+            on_press: app.switch_to_login()
+
+        # Space for More Content
+        # You can add more buttons, labels, etc. here

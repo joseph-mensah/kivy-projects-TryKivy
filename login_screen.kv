@@ -1,0 +1,59 @@
+<LoginScreen>:
+    orientation: 'vertical'
+    padding: [10, 50, 10, 50]  # Left, Top, Right, Bottom padding
+    spacing: 20
+
+    # Title Label
+    Label:
+        text: 'Login to Your Account'
+        font_size: 24
+        size_hint_y: None
+        height: self.texture_size[1]
+
+    # Username Input
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: None
+        height: 40
+
+        Label:
+            text: 'Username:'
+            size_hint_x: None
+            width: 100
+
+        TextInput:
+            id: username_input
+            multiline: False
+            hint_text: 'Enter your username'
+
+    # Password Input
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: None
+        height: 40
+
+        Label:
+            text: 'Password:'
+            size_hint_x: None
+            width: 100
+
+        TextInput:
+            id: password_input
+            multiline: False
+            password: True
+            hint_text: 'Enter your password'
+            on_text_validate: root.validate_user()
+
+    # Login Button
+    Button:
+        text: 'Login'
+        size_hint_y: None
+        height: 40
+        on_press: root.validate_user()
+
+    # Error Label
+    Label:
+        id: error_label
+        color: 1, 0, 0, 1
+        size_hint_y: None
+        height: 30
